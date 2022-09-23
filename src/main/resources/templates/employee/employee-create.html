@@ -24,6 +24,12 @@
                     <div class="form-group col-md-4">
                         <label for="inputFirstNamel4">First Name</label>
                         <input type="text" class="form-control" id="inputFirstNamel4" placeholder="First Name" th:field="*{firstName}">
+                        <div th:if="${#fields.hasErrors('firstName')}">
+                            <ol>
+                                <li th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></li>
+                            </ol>
+
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputlastName4">Last Name</label>
